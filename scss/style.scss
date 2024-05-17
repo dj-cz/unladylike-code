@@ -1,10 +1,43 @@
+$color-primary: #eb07a7;
+$color-secondary: rgb(253, 19, 183);
+$color-off-white: rgb(242, 240, 240);
+$font-main-family: "Red Hat Display", sans-serif;
+$font-decorative-family: "Euphoria Script";
+
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
 body {
     margin: 0;
     font-size: 18px;
-    font-family: sans-serif;
+    font-family: $font-main-family, sans-serif;
+}
+
+.contact__text, .form-message {
+    text-align: center;
+}
+
+.message {
+	width: 50vw;
+	font-size: 18px;
+    margin: 0;
+    padding: 10px;
+}
+
+.form-item {
+    margin: 0;
+}
+
+.submit {
+    margin: 20px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: $color-primary;
+    color: $color-off-white;
+}
+
+.submit:hover {
+    background-color: $color-secondary;
 }
 
 .site-header {
@@ -12,7 +45,8 @@ body {
 }
 
 .main {
-    margin: 20px;
+    margin: 40px 40px 50px 40px;
+    flex-grow: 1;
 }
 
 .logo {
@@ -20,7 +54,6 @@ body {
     margin: 0 auto;
     max-width: 30vw;
 }
-
 
 .menu__nav {
     list-style: none;
@@ -34,58 +67,81 @@ body {
     display: none;
 }
 
-.menu__toggler {
-    cursor: pointer;
-    font-size: 48px;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-}
-  
-
-
 .menu__item {
    background-color: rgb(30, 29, 31);
-   border-bottom: 1px solid white;
-   border-right: 1px solid white;
-
+   border-bottom: 1px solid $color-off-white;
+   border-right: 1px solid $color-off-white;
    padding: 20px; 
+   font-size: 20px;
 }
 
 .menu__link {
     text-decoration: none;
     display: block;
-    color: white;
-
+    color: $color-off-white;
 }
 
-.menu__checkbox {
-    position: absolute;
-    left: -9999px;
+.menu__item:hover {
+    background-color: rgb(77, 74, 79)
 }
 
 .site-header {
-    // display: flex;
     justify-content: space-evenly;
-
 }
-
-// @media screen and (max-width: 1009px) {
-//     .menu__checkbox:checked ~ .menu__nav {
-//         display: block;
-//     }
-// }
 
 .slogan {
     text-align: center;
-    color: #5812c1;;
-    font-size: 32px;
+    color: $color-primary;
+    font-family: $font-main-family;
+    font-size: 36px;
     margin-top: 60px;
+    font-weight: 500;
+}
+
+.slogan::before 
+ {
+    content:"";
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    border: 3px solid lightgray;
+}
+
+.slogan::after
+ {
+    content:"";
+    display: block;
+    margin: 20px auto;
+    width: 70%;
+    border: 3px solid lightgray;
+}
+
+.about-title::before, 
+.products-title::before, 
+.delivery-title::before, 
+.contact__title::before, 
+.products__title::before {
+    content:"";
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+    border: 3px solid lightgray;
+}
+
+.about-title::after, 
+.products-title::after, 
+.delivery-title::after, 
+.contact__title::after, 
+.products__title::after {
+    content:"";
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+    border: 3px solid lightgray;
 }
 
 .product-card {
     max-width: 350px;
-    // max-height: 300px;
     border: 1px solid black;
     margin: 80px auto;
 }
@@ -105,20 +161,26 @@ body {
     grid-template-rows: 1fr 1fr;
     align-items: center;
     gap: 5px;
+}
 
+.product-card__descr {
+    padding: 0 10px;
 }
 
 .product-card__button {
     text-align: center;
-    background-color: #5812c1;
+    background-color: $color-primary;
     margin: 0;
-    padding: 10px;
+    padding: 15px;
+}
+
+.product-card__button:hover {
+    background-color: $color-secondary;
 }
 
 .product-card__link {
-    color: white;
+    color: $color-off-white;
     text-decoration: none;
-
 }
 
 .products-categories {
@@ -134,7 +196,6 @@ body {
     align-items: center;
     margin: 20px auto;
     background-color: rgb(239, 238, 238);
-
 }
 
 .products-categories__descr {
@@ -151,9 +212,19 @@ body {
 }
 
 
+.about-title, .products-title, .delivery-title, .contact__title, .products__title {
+    margin-top: 60px;
+    text-align: center;
+    color: $color-primary;
+}
+
+.about__picture {
+    max-width: 300px;
+}
+
 .footer {
     max-height: 20%;
-    color: rgb(240, 240, 240);
+    color: $color-off-white;
     background-color: rgb(24, 24, 24);
     margin: 0;
     padding: 20px;
@@ -174,7 +245,7 @@ body {
 }
 
 .footer-menu__link {
-    color: rgb(240, 240, 240);
+    color: $color-off-white;
     text-decoration: none;
 }
 
@@ -182,11 +253,10 @@ body {
 @media screen and (min-width: 1010px) {
     .products-feed {
         display: grid;
-        // grid-template-columns: repeat(5, 1fr);
         grid-template-columns: repeat(auto-fill, 350px);
-        gap: 80px;
+        gap: 60px;
         justify-content: center;
-        margin: 60px 0;
+        margin: 60px 10px;
     }
 
     .menu__nav {
@@ -227,8 +297,17 @@ body {
 
     .product-card {
         margin: 0;
+        max-height: auto;
     }
 
+    .about {
+        display: flex;
+    }
+
+    .about__text {
+        flex-basis: 50%;
+        margin-left: 20px;
+    }
 }
 
 
