@@ -72,6 +72,7 @@ body {
   border-right: 1px solid rgb(242, 240, 240);
   padding: 20px;
   font-size: 20px;
+  text-align: center;
 }
 
 .menu__link {

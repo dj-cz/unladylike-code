@@ -73,6 +73,7 @@ body {
    border-right: 1px solid $color-off-white;
    padding: 20px; 
    font-size: 20px;
+   text-align: center;
 }
 
 .menu__link {
@@ -210,7 +211,6 @@ body {
 .product-categories__category:hover {
     border: 3px solid black;
 }
-
 
 .about-title, .products-title, .delivery-title, .contact__title, .products__title {
     margin-top: 60px;
